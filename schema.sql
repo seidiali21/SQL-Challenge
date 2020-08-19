@@ -1,10 +1,18 @@
+drop table employees;
+drop table departments;
+drop table dept_emp;
+drop table dept_manager;
+drop table Salaries;
+drop table titles;
+
 create table titles(
 	title_id varchar not null,
 	title varchar not null,
-    primary key (title_id),
-    foreign KEY (title_id) references employees (emp_title_id)
+    	primary key (title_id),
+    	foreign KEY (title_id) references employees (emp_title_id)
 
 );
+
 select * from titles
 
 create table departments (
@@ -12,6 +20,7 @@ create table departments (
 	dept_name varchar not null,
 	primary key (dept_no)
 );
+
 select * from departments
 
 CREATE TABLE employees(
@@ -24,6 +33,7 @@ CREATE TABLE employees(
     hired_date      DATE            NOT NULL,
     foreign KEY emp_title_id references titles (title_id);
 );
+
 select * from employees
 
 create table dept_emp(
